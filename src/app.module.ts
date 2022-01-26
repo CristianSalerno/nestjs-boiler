@@ -10,9 +10,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     TasksModule,
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(
-      'mongodb+srv://csalerno:Tecomiste7@blogspotted.mkux9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(process.env.MONGO_DB),
   ],
   controllers: [AppController, UserController],
   providers: [AppService],
